@@ -1,0 +1,20 @@
+<div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="logIn.email"
+            type="email" matInput 
+                   placeholder="Ex. pat@example.com">
+            <mat-hint>Errors appear instantly!</mat-hint>
+          </mat-form-field>
+        
+              <mat-form-field  class="example-full-width" appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input [(ngModel)]="logIn.password"
+                matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <button (click)="onLogInBtnClick()"
+              class="example-full-width" mat-raised-button color="primary">Primary</button>
+</div>
